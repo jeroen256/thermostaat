@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Temp Jeroen
+Comment=Thermostaat en andere experimenten
+Type=Application
+Terminal=true
+Path=/media/jw/C/Users/jw/Documents/Python/thermostaat-jeroen
+Exec=python3 main.py t
+Icon=/media/jw/C/Users/jw/Documents/Python/thermostaat-jeroen/icon.png
+
