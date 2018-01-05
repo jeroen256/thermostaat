@@ -310,7 +310,7 @@ def thermostaatWeb(server_class=HTTPServer, port=8080):
     thermostaat = Thermostaat(True)
     def handler(*args): ThermostaatWeb_RequestHandler(thermostaat, *args)
     httpd = server_class(server_address, handler)
-    print('Webserver running, press CTRL + C to stop.\nGoto http://localhost:{0} or http://{1}:{0} (CTRL + click to open)'.format(port, ip))
+    print('Webserver running, press CTRL + C to stop. Goto: \nhttp://raspberrypi:8080\nhttp://localhost:{0}\nhttp://{1}:{0}\n(CTRL + click to open)'.format(port, ip))
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
