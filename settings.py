@@ -47,10 +47,14 @@ class Settings:
         new.temperature_margin = round(new.temperature_margin, 2)
         # Prepare GPIO pins:
         if self.area_1_pin != new.area_1_pin:
-            GPIO.output(self.area_1_pin, False) # switch off old pin
+            GPIO.setmode(GPIO.BCM)
+            try: GPIO.output(self.area_1_pin, False) # switch off old pin
+            except: print('oude poort was niet in gebruik')
             GPIO.setup(new.area_1_pin, GPIO.OUT) # setup new pin
         if self.area_2_pin != new.area_2_pin:
-            GPIO.output(self.area_2_pin, False) # switch off old pin
+            GPIO.setmode(GPIO.BCM)
+            try: GPIO.output(self.area_2_pin, False) # switch off old pin
+            except: print('oude poort was niet in gebruik')
             GPIO.setup(new.area_2_pin, GPIO.OUT) # setup new pin
         # set current settings to new:
         self.__dict__ = new.__dict__

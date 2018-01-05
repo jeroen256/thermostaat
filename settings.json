@@ -1,12 +1,12 @@
 {
-    "area_1_enabled": true,
+    "area_1_enabled": false,
     "area_1_name": "Keuken",
-    "area_1_pin": 12,
+    "area_1_pin": 18,
     "area_2_enabled": false,
     "area_2_name": "Woonkamer",
-    "area_2_pin": 13,
-    "temperature": 22,
+    "area_2_pin": 12,
+    "temperature": 18,
     "temperature_interval_seconds": 5,
-    "temperature_margin": 0.5,
+    "temperature_margin": 0.1,
     "temperature_pin": 4
 }
