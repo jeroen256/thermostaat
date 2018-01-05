@@ -38,9 +38,13 @@ class Thermostaat:
         if self.dht22.temperature < settings.temperature - settings.temperature_margin: self.heating = True
         if self.dht22.temperature >= settings.temperature + settings.temperature_margin: self.heating = False
         if settings.area_1_enabled: GPIO.output(settings.area_1_pin, self.heating)
-        else: GPIO.output(settings.area_1_pin, False)
+        else:
+            try: GPIO.output(settings.area_1_pin, False)
+            except: pass
         if settings.area_2_enabled: GPIO.output(settings.area_2_pin, self.heating)
-        else: GPIO.output(settings.area_2_pin, False)
+        else:
+            try: GPIO.output(settings.area_2_pin, False)
+            except: pass
         #print("Thermostaat.update()")
         if repeat:
             self.timer = threading.Timer(settings.temperature_interval_seconds, self.update, args={True})
